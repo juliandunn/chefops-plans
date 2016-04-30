@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "Starting NATS..." 
+
+$(hab-bpm pkgpath cuddletech/gnatsd)/sbin/gnatsd 2>&1
+
