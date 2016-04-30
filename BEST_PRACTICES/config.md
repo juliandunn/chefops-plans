@@ -89,7 +89,7 @@ If you include HTML, the {{content}} will be escaped by default, use {{{content}
 
 ## TOML Basics
 
-(TOML Documentation)[https://github.com/toml-lang/toml]
+[TOML Documentation](https://github.com/toml-lang/toml)
 
 ```
 # This is a TOML document.
