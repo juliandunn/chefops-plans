@@ -30,7 +30,7 @@ Note that in TOML square-brackets denote a "table" (hash) and the following entr
 
 You can also include variables from the plan.sh using the prefix **pkg**. (also there are maps for bldr, sys, and svc)
 
-_WARNING!!!  Tables in TOML continue until the next table is found or EOF is reached._ See (TOML Docs)[https://github.com/toml-lang/toml#user-content-table] for more details.
+_WARNING!!!  Tables in TOML continue until the next table is found or EOF is reached._ See [TOML Docs](https://github.com/toml-lang/toml#user-content-table) for more details.
 
 Here is a real example, the **config.toml**:
 
@@ -64,7 +64,7 @@ index-file.names = ( "index.html", "index.htm" )
 
 ## Mustache Basics
 
-(Mustache(5) Man Page)[Mustache(5) Man Page]
+(Mustache(5) Man Page)[https://mustache.github.io/mustache.5.html]
 
 ```
 # This is an example Template
