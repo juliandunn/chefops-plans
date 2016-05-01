@@ -1,0 +1,6 @@
+#!/bin/sh
+
+
+#cp {{pkg.path}}/package.json {{pkg.svc_path}}
+#cp {{pkg.path}}/stats.js {{pkg.svc_path}}
+#cp -r {{pkg.path}}/node_modules {{pkg.svc_path}}

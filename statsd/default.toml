@@ -1,0 +1,6 @@
+## Statsd Configuration
+
+statsd-port = 8125
+debug = "true"
+backend = "console"
+
