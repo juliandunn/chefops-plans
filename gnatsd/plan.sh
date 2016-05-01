@@ -1,5 +1,5 @@
 pkg_name=gnatsd
-pkg_origin=cuddletech
+pkg_origin=chefops
 pkg_version=0.7.2
 pkg_maintainer="Ben Rockwood <benr@chef.io>"
 pkg_license=('MIT')

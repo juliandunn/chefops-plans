@@ -13,11 +13,11 @@ cd /src
 studio new
 studio enter
 
-hab origin key generate myOrigin
+hab origin key generate chefops
 build ops-plans/myPlan
 
 hab-bpm install core/hab-pkg-dockerize
-hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize myOrigin/myPlan
+hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize chefops/myPlan
 ```
 
 

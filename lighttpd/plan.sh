@@ -1,5 +1,5 @@
 pkg_name=lighttpd
-pkg_origin=cuddletech
+pkg_origin=chefops
 pkg_version=1.4.39
 pkg_maintainer="Ben Rockwood <benr@chef.io>"
 pkg_license=('Revised BSD')

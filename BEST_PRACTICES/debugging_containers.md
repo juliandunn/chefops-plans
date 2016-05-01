@@ -21,7 +21,7 @@ $ mkdir lighttpd-config
 $ docker run -it \
 > -v ~/public_html:/hab/svc/lighttpd/data \
 > -v ~/lighttpd-config:/hab/svc/lighttpd/config \
-> cuddletech/lighttpd
+> chefops/lighttpd
 ```
 
 Once the supervisor runs and generates the config, you can easily view it in the locally mapped directory.

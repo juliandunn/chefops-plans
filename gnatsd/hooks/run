@@ -2,5 +2,5 @@
 
 echo "Starting NATS..." 
 
-$(hab-bpm pkgpath cuddletech/gnatsd)/sbin/gnatsd 2>&1
+$(hab-bpm pkgpath chefops/gnatsd)/sbin/gnatsd 2>&1
 

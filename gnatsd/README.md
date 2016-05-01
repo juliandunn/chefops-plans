@@ -20,15 +20,15 @@ The result is a smooth working container and solid plan, but its decievingly sim
 
 ```
 build ops-plans/gnatsd
-hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize cuddletech/gnatsd
+hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize chefops/gnatsd
 ```
 
 
 ### To run:
 
 ```
-$ docker run -it cuddletech/gnatsd
-hab-sup(MN): Starting cuddletech/gnatsd
+$ docker run -it chefops/gnatsd
+hab-sup(MN): Starting chefops/gnatsd
 hab-sup(GS): Supervisor 172.17.0.2: aa8a6144-fea3-4f7d-b501-401c1c1c00d1
 hab-sup(GS): Census gnatsd.default: 0f37ec19-4be8-49ba-b487-9aa5b41f5ce6
 hab-sup(GS): Starting inbound gossip listener

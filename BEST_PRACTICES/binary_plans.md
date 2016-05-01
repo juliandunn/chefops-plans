@@ -15,7 +15,7 @@ patches which are bundled with the plan).
 
 ```
 pkg_name=hello_world
-pkg_origin=cuddletech
+pkg_origin=chefops
 pkg_version=0.0.1
 pkg_maintainer="Ben Rockwood <benr@chef.io>"
 pkg_license=('Revised BSD')
@@ -56,8 +56,8 @@ As of 4/30/16, Dockerized services **must*** possess a configuration, even if it
 error will be seen during container startup:
 
 ```
-benr@magnolia:~$ docker run -it cuddletech/hello_world 
-hab-sup(MN): Starting cuddletech/hello_world
+benr@magnolia:~$ docker run -it chefops/hello_world 
+hab-sup(MN): Starting chefops/hello_world
 hab-sup(GS): Supervisor 172.17.0.2: cdf8e4b8-a20d-402f-9ec0-d94322b14765
 hab-sup(GS): Census hello_world.default: 24e5ff4c-84a8-4375-a44e-e53877f88e67
 hab-sup(GS): Starting inbound gossip listener

@@ -1,5 +1,5 @@
 pkg_name=hello_world
-pkg_origin=cuddletech
+pkg_origin=chefops
 pkg_version=0.0.1
 pkg_maintainer="Ben Rockwood <benr@chef.io>"
 pkg_license=('Revised BSD')

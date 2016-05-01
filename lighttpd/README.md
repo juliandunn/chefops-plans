@@ -1,16 +1,16 @@
 ## Build
 
-Create a studio, generate the origin keys for "cuddletech", then build and dockerize:
+Create a studio, generate the origin keys for "chefops", then build and dockerize:
 
 ```
 studio new
 studio enter
 
-hab origin key generate cuddletech
+hab origin key generate chefops
 build ops-plans/lighttpd
 
 hab-bpm install core/hab-pkg-dockerize
-hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize cuddletech/lighttpd
+hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize chefops/lighttpd
 ```
 
 ## Run
@@ -18,8 +18,8 @@ hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize cuddletech/lighttpd
 To run the Docker container, provide a local directory with HTML as the docroot to _lighttpd_.  Example:
 
 ```
-benr@magnolia:~$ docker run -it -v ~/public_html:/hab/svc/lighttpd/data  cuddletech/lighttpd
-hab-sup(MN): Starting cuddletech/lighttpd
+benr@magnolia:~$ docker run -it -v ~/public_html:/hab/svc/lighttpd/data  chefops/lighttpd
+hab-sup(MN): Starting chefops/lighttpd
 hab-sup(GS): Supervisor 172.17.0.2: 783dbc41-821a-4f2d-9dd1-6079b123517c
 hab-sup(GS): Census lighttpd.default: 5dee85b3-29cb-4c5e-9455-531cd90f729a
 hab-sup(GS): Starting inbound gossip listener
