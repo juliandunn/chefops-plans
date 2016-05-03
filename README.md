@@ -2,6 +2,24 @@
 
 This is the worlds first Habitat plan repository outside of Habitat itself!  
 
+## Getting Started with Habitat
+
+```
+# Get and Build Habitat
+git clone https://github.com/habitat-sh/habitat.git
+cd habitat
+make distclean  ## If you have an old build, clean it out
+make image	## Generate the devshell Docker container with Habitat
+
+# Add in the chefops-plans Repo 
+git clone https://github.com/chef/chefops-plans.git
+
+# Now enter the Habitat Devshell
+make shell
+```
+
+Once you are in the shell you can proceed to build the plans, as shown in the next section.
+
 ## Building the Plans
 
 To use these plans, checkout the repository along side your **plans/** directory
