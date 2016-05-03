@@ -1,18 +1,23 @@
-pkg_name=jdk8
 pkg_origin=chefops
-pkg_version=8u91
 pkg_maintainer="Ben Rockwood <benr@chef.io>"
-pkg_license=('http://www.oracle.com/technetwork/java/javase/terms/license/index.html')
+
+pkg_name=jdk8
+pkg_version=8u91
 pkg_source=http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.tar.gz
-pkg_filename=jdk-8u91-linux-x64.tar.gz
 pkg_shasum=6f9b516addfc22907787896517e400a62f35e0de4a7b4d864b26b61dbe1b7552
-#pkg_deps=(core/glibc core/openssl core/zlib core/pcre)
-#pkg_build_deps=(core/gcc core/make core/coreutils)
-#pkg_lib_dirs=(lib)
-#pkg_include_dirs=(include)
+pkg_filename=jdk-${pkg_version}-linux-x64.tar.gz
+
+pkg_license=('http://www.oracle.com/technetwork/java/javase/terms/license/index.html')
+
+pkg_deps=(core/glibc)
+pkg_lib_dirs=(lib)
+pkg_include_dirs=(include)
 
 
-## Refer to habitat/components/plan-build/bin/hab-plan-build.sh
+
+source_dir=$HAB_CACHE_SRC_PATH/${pkg_name}-${pkg_version}
+
+## Refer to habitat/components/plan-build/bin/hab-plan-build.sh for help
 
 # Customomized download_file() to work around the Oracle EULA Cookie-wall 
 #  See: http://stackoverflow.com/questions/10268583/downloading-java-jdk-on-linux-via-wget-is-shown-license-page-instead
@@ -40,8 +45,14 @@ download_file() {
 }
 
 do_unpack() {
-  ### mv jdk1.8.0_91
+  build_line "Unpacking $pkg_filename"
+  local unpack_file="$HAB_CACHE_SRC_PATH/$pkg_filename"
+  mkdir $source_dir
+  pushd $source_dir >/dev/null
+  tar xz --strip-components=1 -f $unpack_file
 
+  popd > /dev/null
+  return 0
 }
 
 do_build() {
@@ -49,9 +60,9 @@ do_build() {
 }
 
 do_install() {
-  cd $pkg_dirname 
-  rm *			## Remove all the files from the JDK root
-  rm -r man
+  build_line "Copying JDK files into package"
+
+  cd $source_dir
   cp -r * $pkg_prefix
 }
 
