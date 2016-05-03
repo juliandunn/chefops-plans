@@ -14,6 +14,7 @@ pkg_service_user=elasticsearch
 pkg_service_group=elasticsearch
 
 pkg_expose=(9200 9300)
+pkg_service_run="CONF_DIR=${pkg_svc_config_path} bin/elasticsearch"
 
 do_build() {
   return 0

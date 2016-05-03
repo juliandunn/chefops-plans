@@ -1,5 +1,7 @@
 #!/bin/sh
 
 
-$(hab-bpm pkgpath chefops/elasticsearch)/bin/elasticsearch 2>&1
+
+export CONF_DIR=${pkg_svc_config_path}
+su -c $(hab-bpm pkgpath chefops/elasticsearch)/bin/elasticsearch hab
 

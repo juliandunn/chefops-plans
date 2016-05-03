@@ -10,6 +10,7 @@ pkg_filename=jdk-${pkg_version}-linux-x64.tar.gz
 pkg_license=('http://www.oracle.com/technetwork/java/javase/terms/license/index.html')
 
 pkg_deps=(core/glibc)
+pkg_bin_dirs=(bin jre/bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
 
