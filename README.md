@@ -28,14 +28,14 @@ in the source tree.  Then build as usual, example:
 ```
 cd /src
 
-studio new
-studio enter
+hab-studio new
+hab-studio enter
 
 hab origin key generate chefops
-build ops-plans/myPlan
+build chefops-plans/{myPlan}
 
 hab-bpm install core/hab-pkg-dockerize
-hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize chefops/myPlan
+hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize chefops/{myPlan}
 ```
 
 
