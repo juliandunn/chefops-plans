@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# gnatsd is Dynamically Linked and requires /lib64/ld-linux-x86-64.so.2
+echo "Symlinking /lib/ld-linux-x86-64.so.2..."
+ln -s $(hab-bpm pkgpath core/glibc)/lib/ld-2.22.so /lib/ld-linux-x86-64.so.2
+
+

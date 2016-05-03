@@ -1,0 +1,5 @@
+#!/bin/sh
+
+
+$(hab-bpm pkgpath chefops/elasticsearch)/bin/elasticsearch 2>&1
+
