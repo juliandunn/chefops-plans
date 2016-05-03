@@ -11,7 +11,10 @@ pkg_shasum=6f9b516addfc22907787896517e400a62f35e0de4a7b4d864b26b61dbe1b7552
 #pkg_lib_dirs=(lib)
 #pkg_include_dirs=(include)
 
-# Customomized download_file() to work around the Oracle EULA Cookie-wall
+
+## Refer to habitat/components/plan-build/bin/hab-plan-build.sh
+
+# Customomized download_file() to work around the Oracle EULA Cookie-wall 
 #  See: http://stackoverflow.com/questions/10268583/downloading-java-jdk-on-linux-via-wget-is-shown-license-page-instead
 download_file() {
   local url="$1"
@@ -36,7 +39,21 @@ download_file() {
   popd > /dev/null
 }
 
-do_build() {
+do_unpack() {
+  ### mv jdk1.8.0_91
+
 }
+
+do_build() {
+  return 0
+}
+
+do_install() {
+  cd $pkg_dirname 
+  rm *			## Remove all the files from the JDK root
+  rm -r man
+  cp -r * $pkg_prefix
+}
+
 
 
