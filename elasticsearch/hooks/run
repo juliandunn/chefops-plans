@@ -1,7 +1,10 @@
 #!/bin/sh
 
+PKG_PATH=$(hab-bpm pkgpath chefops/elasticsearch)
+CFG_PATH=/hab/svc/elasticsearch/config
 
 
-export CONF_DIR=${pkg_svc_config_path}
-su -c $(hab-bpm pkgpath chefops/elasticsearch)/bin/elasticsearch hab
+su hab -c "${PKG_PATH}/es/bin/elasticsearch --default.path.conf=${CFG_PATH}" 2>&1
 
+
+echo "DEBUG: Leaving the run hook."

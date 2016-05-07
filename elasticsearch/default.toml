@@ -1,1 +1,24 @@
 ## ElasticSearch Configuration
+
+cluster-name = "elasticsearch"
+node-name = ""
+
+path-data =    "/hab/svc/elasticsearch/data"
+path-logs =    "/hab/svc/elasticsearch/logs"
+path-plugins = "/hab/svc/elasticsearch/var"
+path-scripts = "/hab/svc/elasticsearch/config/scripts"
+
+bootstrap-mlockall = "true"
+
+network-host =  "_site_"
+http-port = 9200
+
+discovery-minimum_master_nodes = 1
+discovery-ping_unicast_hosts = "[]"
+discovery-ping_multicast_enabled = "false"
+
+gateway-recover_after_nodes = ""
+
+node-max_local_storage_nodes = 1
+
+action-destructive_requires_name = "true"

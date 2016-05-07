@@ -10,11 +10,8 @@ pkg_deps=(core/glibc chefops/jdk8)
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
-pkg_service_user=elasticsearch
-pkg_service_group=elasticsearch
-
 pkg_expose=(9200 9300)
-pkg_service_run="CONF_DIR=${pkg_svc_config_path} bin/elasticsearch"
+pkg_service_run="es/bin/elasticsearch --default.path.conf=${pkg_svc_config_path} 2>&1"
 
 do_build() {
   return 0
@@ -22,6 +19,7 @@ do_build() {
 
 do_install() {
   build_line "Copying files from $PWD"
-  cp -r * $pkg_prefix/
+  mkdir -p $pkg_prefix/es
+  cp -r * $pkg_prefix/es
 }
 
