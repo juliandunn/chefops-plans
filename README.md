@@ -38,5 +38,14 @@ hab-bpm install core/hab-pkg-dockerize
 hab-bpm exec core/hab-pkg-dockerize hab-pkg-dockerize chefops/{myPlan}
 ```
 
+## Uploading Packages to the Depot
+
+If you wish to upload a Package to the Depot (willem.habitat.sh), use the command:
+*hab artifact upload /hab/cache/artifacts/....hart* 
+
+**NOTE!**: Once you upload a package to the depot the supervisors will attempt to use it
+to upload any runnings instances.  Only upload packages if you are sure you want them running
+in the wild!
+
 
 
