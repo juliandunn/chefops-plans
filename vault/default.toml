@@ -1,0 +1,6 @@
+## Vault Configuration
+
+devmode = false
+
+[backend.file]
+path = "/vault/secrets"
