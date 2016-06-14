@@ -34,16 +34,16 @@ hab-studio enter
 
 ## If you don't have keys for your origin yet (if you do, just copy them to /hab/cache/keys/):
 hab origin key generate chefops
-build chefops-plans/{myPlan}
+cd chefops-plans/{myPlan}
+build 
 
-hab pkg install core/hab-pkg-dockerize
-hab pkg exec core/hab-pkg-dockerize hab-pkg-dockerize chefops/{myPlan}
+hab export docker chefops/{myPlan}
 ```
 
 ## Uploading Packages to the Depot
 
 If you wish to upload a Package to the Depot (willem.habitat.sh), use the command:
-*hab artifact upload /hab/cache/artifacts/....hart* 
+*hab pkg upload -z $GITHUB_AUTH_TOKEN /hab/cache/artifacts/....hart* 
 
 **NOTE!**: Once you upload a package to the depot the supervisors will attempt to use it
 to upload any runnings instances.  Only upload packages if you are sure you want them running

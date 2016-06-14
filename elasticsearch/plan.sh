@@ -11,7 +11,7 @@ pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 
 pkg_expose=(9200 9300)
-pkg_service_run="es/bin/elasticsearch --default.path.conf=${pkg_svc_config_path} 2>&1"
+pkg_svc_run="es/bin/elasticsearch --default.path.conf=${pkg_svc_config_path} 2>&1"
 
 do_build() {
   return 0

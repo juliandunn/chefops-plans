@@ -1,4 +1,4 @@
 #!/bin/sh
 
 echo "Symlinking /lib/ld-linux-x86-64.so.2..."
-ln -s $(hab-bpm pkgpath core/glibc)/lib/ld-2.22.so /lib/ld-linux-x86-64.so.2
+ln -s $(hab pkg path core/glibc)/lib/ld-2.22.so /lib/ld-linux-x86-64.so.2

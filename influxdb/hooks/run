@@ -1,4 +1,4 @@
 #!/bin/sh
 
 
-{{pkg.path}}/sbin/influxd run -config {{pkg.svc_config_path}}/influxdb.conf
+{{pkg.path}}/sbin/influxd run -config {{pkg.svc_config_path}}/influxdb.conf 2>&1 

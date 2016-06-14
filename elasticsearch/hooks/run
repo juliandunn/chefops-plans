@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PKG_PATH=$(hab-bpm pkgpath chefops/elasticsearch)
+PKG_PATH=$(hab pkg path chefops/elasticsearch)
 CFG_PATH=/hab/svc/elasticsearch/config
 
 

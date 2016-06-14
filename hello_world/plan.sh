@@ -6,7 +6,7 @@ pkg_license=('Revised BSD')
 pkg_deps=()
 pkg_build_deps=()
 
-pkg_service_run="bin/hello_world"
+pkg_svc_run="bin/hello_world"
 
 do_download() {
   return 0

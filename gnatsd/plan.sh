@@ -11,7 +11,7 @@ pkg_filename="${pkg_name}-v${pkg_version}-linux-amd64.tar.gz"
 pkg_deps=(core/glibc)
 pkg_bin_dirs=(sbin)
 
-pkg_service_run="sbin/gnatsd"
+pkg_svc_run="sbin/gnatsd"
 pkg_expose=(4222)
 
 

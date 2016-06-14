@@ -3,8 +3,8 @@
 ## Ensure /data/db is mounted.
 
 if [[ -d /data/db ]]; then
-  export LD_LIBRARY_PATH=$(hab-bpm pkgpath core/gcc-libs)/lib:$LD_LIBRARY_PATH
-  $(hab-bpm pkgpath chefops/mongodb)/bin/mongod --noauth --rest --httpinterface
+  export LD_LIBRARY_PATH=$(hab pkg path core/gcc-libs)/lib:$LD_LIBRARY_PATH
+  $(hab pkg path chefops/mongodb)/bin/mongod --noauth --rest --httpinterface
 else
   echo "ERROR: MongoDB Data Directory (/var/db) not present!  Specify a valid volume."
 fi

@@ -11,10 +11,10 @@ pkg_deps=(core/glibc core/openssl core/zlib core/pcre)
 pkg_build_deps=(core/gcc core/make core/coreutils)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
-pkg_service_user="root"
+pkg_svc_user="root"
 
 pkg_expose=(80)
-pkg_service_run="sbin/lighttpd -Df $pkg_svc_config_path/lighttpd.conf"
+pkg_svc_run="sbin/lighttpd -Df $pkg_svc_config_path/lighttpd.conf"
 
 do_build() {
   ./configure --prefix=${pkg_prefix} \

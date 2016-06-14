@@ -1,5 +1,5 @@
 #!/bin/sh
 #
 
-cd $(hab-bpm pkgpath chefops/statsd)/src
+cd $(hab pkg path chefops/statsd)/src
 node stats.js {{pkg.svc_config_path}}/statsd-config.js
