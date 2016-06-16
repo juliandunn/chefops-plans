@@ -1,0 +1,12 @@
+#!/bin/sh
+
+IP={{svc.me.ip}}
+DATA_DIR={{pkg.svc_data_path}}
+
+echo "Starting etcd on ${IP}..."
+echo ""
+{{pkg.path}}/sbin/etcd --data-dir ${DATA_DIR} \
+        --listen-peer-urls "http://${IP}:2380,http://${IP}:7001" \
+        --listen-client-urls "http://${IP}:2379,http://${IP}:4001" \
+        --advertise-client-urls "http://${IP}:2380,http://${IP}:7001" \
+        2>&1
