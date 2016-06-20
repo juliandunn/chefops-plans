@@ -11,9 +11,11 @@ pkg_filename="${pkg_name}_${pkg_version}.tar.gz"
 pkg_deps=(core/glibc)
 pkg_build_deps=(core/glibc core/go)
 
-#pkg_svc_run="bin"
-#pkg_expose=(3000)
-#GOPATH=/hab/cache/src/go
+
+## Building Golang Apps in Habitat:
+##  - Include 'core/go' as a build_dep
+##  - Use 'go build -o xxx' in the source directory, 
+##    this avoids needing to have a properly configured GOPATH
 
 do_build() {
   go build -o wsf

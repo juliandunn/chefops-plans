@@ -1,4 +1,0 @@
-## Vault Configuration
-
-[[backend.file]]
-path = "/vault/secrets"
