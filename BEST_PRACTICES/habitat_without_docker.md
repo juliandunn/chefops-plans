@@ -13,7 +13,7 @@ This proceedure was tested successfully on an Ubuntu 14.04 Vagrant box.
 
 I learned this method from Nathan Smith, it borrows from the Habitat Studio installer script.
 
-Begin by downloading or cut-n-pasting the (install.sh)[https://raw.githubusercontent.com/habitat-sh/habitat/master/components/studio/install.sh]
+Begin by downloading or cut-n-pasting the [install.sh](https://raw.githubusercontent.com/habitat-sh/habitat/master/components/studio/install.sh)
 script onto the host your going to use.
 
 Now execute the script.  This will get the BPM tool which allows you to install packages.
