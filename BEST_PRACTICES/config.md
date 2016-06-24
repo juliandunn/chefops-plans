@@ -64,7 +64,7 @@ index-file.names = ( "index.html", "index.htm" )
 
 ## Mustache Basics
 
-(Mustache(5) Man Page)[https://mustache.github.io/mustache.5.html]
+[Mustache(5) Man Page](https://mustache.github.io/mustache.5.html)
 
 ```
 # This is an example Template
