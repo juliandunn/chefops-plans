@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "Starting Go Git Service (GOGS)..." 
+
+$(hab pkg path chefops/gogs)/gogs/gogs 2>&1
+
