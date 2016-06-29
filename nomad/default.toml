@@ -1,0 +1,5 @@
+## Nomad configuration
+
+data_dir = "/data/nomad"
+
+[server]
