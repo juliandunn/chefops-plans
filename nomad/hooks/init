@@ -1,0 +1,2 @@
+mkdir -p /data/nomad
+chown hab /data/nomad
