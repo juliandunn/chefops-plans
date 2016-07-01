@@ -1,0 +1,6 @@
+## Nomad configuration
+
+data_dir = "/data/nomad"
+
+[server]
+bootstrap_expect = 3
