@@ -44,7 +44,7 @@ Service groups can be used to limit the scope of a topology and allow multiple o
 
 ## Config
 
-Habitat packages allow for templated config files using the (handlebars templating syntax)[http://handlebarsjs.com/].  There is a good overview of the config in the (official docs)[https://www.habitat.sh/docs/create-packages-configure/], but in addtion to the user supplied config the supervisor has a lot of built in variables related to topologies and service groups.
+Habitat packages allow for templated config files using the [handlebars templating syntax](http://handlebarsjs.com/).  There is a good overview of the config in the [official docs](https://www.habitat.sh/docs/create-packages-configure/), but in addtion to the user supplied config the supervisor has a lot of built in variables related to topologies and service groups.
 
 ### General
 * `bind` - ? I don't know what this is
