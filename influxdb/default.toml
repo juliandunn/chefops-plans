@@ -1,0 +1,9 @@
+reporting-disabled = false
+meta-dir = "/var/lib/influxdb/meta"
+data-dir = "/var/lib/influxdb/data"
+wal-dir = "/var/lib/influxdb/wal"
+admin-enabled = true
+admin-bind-address = ":8083"
+http-enabled = true
+http-bind-address = ":8086"
+graphite-enabled = false
