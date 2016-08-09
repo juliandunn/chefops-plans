@@ -1,6 +1,23 @@
 ## Vault Configuration
 
+# Basic config
 devmode = false
+disable_mlock = false
+disable_cache = false
 
-[backend.file]
-path = "/vault/secrets"
+[listener.tcp]
+tls_disable = 1
+
+# Set this to enable the file backend
+#[backend.file]
+#path = "/vault/secrets"
+
+# Set this to enable the S3 backend
+#[backend.s3]
+#bucket = "my-chef-vault-bucket"
+#region = "us-east-1"
+
+# Set this to enable the consul ha backend
+#[ha_backend.consul]
+#address = "127.0.0.1:8500"
+#path = "vault"
