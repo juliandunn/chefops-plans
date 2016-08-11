@@ -2,5 +2,6 @@
     "node_name": "{{svc.me.ip}}",
     "bootstrap_expect": {{cfg.bootstrap_expect}},
     "data_dir": "{{cfg.data_dir}}",
-    "client_addr": "{{cfg.client_addr}}"
+    "client_addr": "{{cfg.client_addr}}",
+    "advertise_addr": "{{svc.me.ip}}"
 }
