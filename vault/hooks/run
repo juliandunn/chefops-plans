@@ -1,3 +1,2 @@
 #!/bin/sh
-
-{{pkg.path}}/bin/vault server {{#if cfg.devmode}} -dev -dev-listen-address="0.0.0.0:8200"  {{else}} -config={{pkg.svc_config_path}}/vault.conf  {{/if}} 2>&1 
+exec {{pkg.path}}/bin/vault server {{#if cfg.devmode}} -dev -dev-listen-address="0.0.0.0:8200"  {{else}} -config={{pkg.svc_config_path}}/vault.conf  {{/if}} 2>&1

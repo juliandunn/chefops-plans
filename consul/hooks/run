@@ -1,4 +1,4 @@
-{{pkg.path}}/bin/consul agent -server \
+exec {{pkg.path}}/bin/consul agent -server \
     -config-dir {{pkg.svc_config_path}} \
     {{~#each svc.named.consul.default.members}}
     -join {{ip}} \
