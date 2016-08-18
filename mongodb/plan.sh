@@ -17,11 +17,19 @@ do_build() {
   return 0
 }
 
+do_strip() {
+  return 0
+}
+
 do_install() {
   mkdir -p $pkg_prefix/bin
   cp bin/* $pkg_prefix/bin/
 
   for i in mongo mongos mongod ; do
-    patchelf --set-interpreter "$(pkg_path_for glibc)/lib/ld-linux-x86-64.so.2" ${pkg_prefix}/bin/$i
+    build_line "Setting interpreter for '${pkg_prefix}/bin/${i}' '$(pkg_path_for glibc)/lib/ld-linux-x86-64.so.2'"
+    build_line "Setting rpath for '${pkg_prefix}/bin/${i}' to '$LD_RUN_PATH'"
+    patchelf --set-interpreter "$(pkg_path_for glibc)/lib/ld-linux-x86-64.so.2" \
+             --set-rpath ${LD_RUN_PATH} \
+             ${pkg_prefix}/bin/${i}
   done
 }
