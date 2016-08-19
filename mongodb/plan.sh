@@ -1,21 +1,19 @@
 pkg_name=mongodb
 pkg_origin=chefops
-pkg_version=3.2.6
+pkg_version=3.2.9
 pkg_maintainer="Ben Rockwood <benr@chef.io>"
 pkg_description="High-performance, schema-free, document-oriented database"
 pkg_license=('AGPL-3.0')
-pkg_source=https://fastdl.mongodb.org/linux/${pkg_name}-linux-x86_64-${pkg_version}.tgz
-pkg_filename=${pkg_name}-linux-x86_64-${pkg_version}.tgz
-pkg_dirname=${pkg_name}-linux-x86_64-${pkg_version}
-pkg_shasum=2b977dbb222fbeddc31aecba931f726bdc488b2f8ff4314768d2fda5b27e85e3
+pkg_shasum=25f8817762b784ce870edbeaef14141c7561eb6d7c14cd3197370c2f9790061b
 pkg_deps=(core/glibc core/gcc-libs)
-pkg_build_deps=(core/patchelf)
-
+pkg_build_deps=(core/gcc core/scons core/python2)
 pkg_expose=(27017 28017)
+pkg_bin_dirs=(bin)
 # This plan uses hooks.
 
 do_build() {
-  return 0
+  #LD_LIBRARY_PATH=$(pkg_path_for core/gcc-libs)/lib
+  scons all
 }
 
 do_strip() {
