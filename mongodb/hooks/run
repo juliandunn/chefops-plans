@@ -1,3 +1,13 @@
 #!/bin/sh
 
 {{pkg.path}}/bin/mongod --noauth --rest --httpinterface --config {{pkg.svc_config_path}}/mongodb.conf
+
+{{~#if svc.me.leader}}
+echo "rs.initiate()" | {{pkg.path}}/bin/mongo
+
+{{~#with svc.all.members}}
+{{~#unless leader}}
+echo "rs.add()" | {{pkg.path}}/bin/mongo
+{{~/unless}}
+{{~/with}}
+{{~/if}}
