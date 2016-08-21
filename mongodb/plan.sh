@@ -40,13 +40,14 @@ do_unpack() {
 do_build() {
   CC="$(pkg_path_for gcc)/bin/gcc"
   CXX="$(pkg_path_for gcc)/bin/g++"
-  scons --prefix="$pkg_prefix" CXX="$CXX" CC="$CC" LINKFLAGS="$LD_FLAGS" --release core
+  scons --prefix="$pkg_prefix" CXX="$CXX" CC="$CC" LINKFLAGS="$LDFLAGS" --release core
 }
 
 do_check() {
   CC="$(pkg_path_for gcc)/bin/gcc"
   CXX="$(pkg_path_for gcc)/bin/g++"
-  scons --prefix="$pkg_prefix" CXX="$CXX" CC="$CC" LINKFLAGS="$LD_FLAGS" --release dbtests
+  scons --prefix="$pkg_prefix" CXX="$CXX" CC="$CC" LINKFLAGS="$LDFLAGS" --release dbtest
+  python buildscripts/resmoke.py --suites=dbtest
 }
 
 do_install() {
