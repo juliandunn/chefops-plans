@@ -10,26 +10,13 @@ pkg_deps=(core/gcc-libs core/glibc)
 pkg_build_deps=(
   core/coreutils
   core/gcc
+  core/patchelf
   core/python2
   core/scons
 )
 pkg_bin_dirs=(bin)
 pkg_lib_dirs=(lib)
 pkg_include_dirs=(include)
-#pkg_dirname=${pkg_name}-r${pkg_version}
-
-#do_prepare() {
-#  if [[ ! -r /usr/bin/basename ]]; then
-#    ln -sv "$(pkg_path_for coreutils)/bin/basename" /usr/bin/basename
-#    _clean_basename=true
-#  fi
-#
-#  if [[ ! -r /usr/bin/tr ]]; then
-#    ln -sv "$(pkg_path_for coreutils)/bin/tr" /usr/bin/tr
-#    _clean_tr=true
-#  fi
-#
-#}
 
 do_unpack() {
   mkdir -p $pkg_dirname
@@ -41,6 +28,12 @@ do_build() {
   CC="$(pkg_path_for gcc)/bin/gcc"
   CXX="$(pkg_path_for gcc)/bin/g++"
   scons --prefix="$pkg_prefix" CXX="$CXX" CC="$CC" LINKFLAGS="$LDFLAGS" --release core
+  # XXXX Fix whatever scons is expecting for LD_RUN_PATH/LD_LIBRARY_PATH instead of patchelfing
+  for i in mongo mongos mongod ; do
+    build_line "Setting rpath for '${pkg_prefix}/bin/${i}' to '$LD_RUN_PATH'"
+    patchelf --set-rpath ${LD_RUN_PATH} \
+             ${pkg_prefix}/bin/${i}
+  done
 }
 
 do_check() {
@@ -55,13 +48,3 @@ do_install() {
   CXX="$(pkg_path_for gcc)/bin/g++"
   scons --prefix="$pkg_prefix" CXX="$CXX" CC="$CC" install
 }
-
-#do_end() {
-#  if [[ -n "$_clean_basename" ]]; then
-#    rm -fv /usr/bin/basename
-#  fi
-#
-#  if [[ -n "$_clean_tr" ]]; then
-#    rm -fv /usr/bin/tr
-#  fi
-#}
